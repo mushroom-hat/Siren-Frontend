@@ -59,7 +59,7 @@ const Login = () => {
             } else if (error.response?.status === 401) {
                 setErrMsg('Invalid username or password.');
             } else {
-                setErrMsg('Login Failed');
+                setErrMsg('Login Failed. Please try again.');
             }
             errRef.current.focus();
         }
