@@ -20,18 +20,19 @@ const ROLES = {
 // #7473D3
 // #777C7C
 function App() {
+  console.log("remember to change axios.js")
   return (
     // <div className="min-h-full bg-gray-100 h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     // <div className="max-w-md w-full space-y-8">
     <div className="overscroll-none overflow-hidden min-h-full bg-gray-100">
     <Routes>
+      <Route element={<PersistLogin/>}>
       {/* public routes */}
         <Route path="/" element={<LoginPage/>} />
         <Route path="/register" element={<RegisterPage/>} />
         <Route path="/unauthorized" element={<Unauthorized/>} />
     
       {/* private routes */}
-      <Route element={<PersistLogin/>}>
         <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Admin]}/>}>
           <Route path="/home" element={<HomePage/>} />
           <Route path="/files" element={<HomePage/>} />

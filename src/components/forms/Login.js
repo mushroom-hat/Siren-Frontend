@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useContext } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { loginFields } from "../../constants/formFields";
 import FormAction from "./FormAction";
 import FormError from "./FormError";
@@ -6,7 +6,7 @@ import FormExtra from "./FormExtra";
 import Input from "./Input";
 import axios from "../../api/axios";
 import useAuth from '../../hooks/useAuth';
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 // set empty login fields
 const fields=loginFields;
@@ -58,6 +58,8 @@ const Login = () => {
                 setErrMsg('Missing Username or Password.');
             } else if (error.response?.status === 401) {
                 setErrMsg('Invalid username or password.');
+            } else if (error.response?.status === 429) {
+                setErrMsg("You can't make any more requests at the moment. Please try again later.");
             } else {
                 setErrMsg('Login Failed. Please try again.');
             }

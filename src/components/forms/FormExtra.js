@@ -1,7 +1,7 @@
 import useToggle from '../../hooks/useToggle';
 
 const FormExtra = () => {
-    const [check, toggleCheck] = useToggle('persist', false);
+    const [check, toggleCheck] = useToggle('remember-me', false);
 
     return(
         <div className="flex items-center justify-between">
@@ -15,7 +15,7 @@ const FormExtra = () => {
             checked={check}
           />
           <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-            Remember me
+            Remember this device  
           </label>
         </div>
 

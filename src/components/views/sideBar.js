@@ -29,7 +29,7 @@ const SideNav = () => {
                 isActive ? 'bg-[#546A7B] text-white' : 'hover:bg-opacity-50'
               }`}
             >
-              <FontAwesomeIcon icon={icon} size="base" />
+              <FontAwesomeIcon icon={icon} />
               <span>{text}</span>
               <br />
             </Link>

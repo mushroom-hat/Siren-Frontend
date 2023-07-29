@@ -4,7 +4,6 @@ import useAuth from "../hooks/useAuth";
 
 const RequireAuth = ( { allowedRoles }) => {
     const { auth } = useAuth();
-
     // get the current location
     const location = useLocation();
 

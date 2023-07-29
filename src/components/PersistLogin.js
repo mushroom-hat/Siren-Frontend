@@ -8,7 +8,7 @@ const PersistLogin = () => {
     const [isLoading, setIsLoading] = useState(true);
     const refresh = useRefreshToken();
     const { auth } = useAuth();
-    const [persist] = useLocalStorage('persist', false);
+    const [remember_me] = useLocalStorage('remember-me', false);
 
     useEffect(() => {
         let isMounted = true;
@@ -24,21 +24,21 @@ const PersistLogin = () => {
             }
         }
 
-        !auth?.accessToken && persist ? verifyRefreshToken() : setIsLoading(false);
+        !auth?.accessToken && remember_me ? verifyRefreshToken() : setIsLoading(false);
 
         return () => {
             isMounted = false;
         }
     }, [])
 
-    useEffect(() => {
-        console.log(`isLoading: ${isLoading}`)
-        console.log(`aT: ${JSON.stringify(auth?.accessToken)}`)
-    }, [isLoading])
+    // useEffect(() => {
+    //     console.log(`isLoading: ${isLoading}`)
+    //     console.log(`aT: ${JSON.stringify(auth?.accessToken)}`)
+    // }, [isLoading])
 
     return (
         <>
-            {!persist
+            {!remember_me
                 ? <Outlet /> // represent all the child components in route
                 : isLoading
                 ? <p>Loading...</p>
