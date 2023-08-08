@@ -1,15 +1,18 @@
 import axios from 'axios';
 
-export default axios.create({
-    baseURL: 'http://localhost:5000'
-    // baseURL: 'https://siren-api.mushroomhat.co'
+const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+
+const defaultAxiosInstance = axios.create({
+  baseURL,
 });
 
-export const axiosPrivate = axios.create({
-    baseURL: 'http://localhost:5000',
-    // baseURL: 'https://siren-api.mushroomhat.co',
-    headers: {
-        'Content-Type': 'application/json',
-        withCredentials: true
-    }
+const axiosPrivate = axios.create({
+  baseURL,
+  headers: {
+    'Content-Type': 'application/json',
+    withCredentials: true,
+  },
 });
+
+export default defaultAxiosInstance;
+export { axiosPrivate };

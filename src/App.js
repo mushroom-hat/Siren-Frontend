@@ -21,6 +21,7 @@ const ROLES = {
 // #777C7C
 function App() {
   console.log("remember to change axios.js")
+  console.log(process.env.REACT_APP_API_BASE_URL)
   return (
     // <div className="min-h-full bg-gray-100 h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     // <div className="max-w-md w-full space-y-8">

@@ -30,7 +30,7 @@ const Register = () => {
         e.preventDefault();
         try {
             //Handle Login API Integration here
-            const response = await axios.post("/register", JSON.stringify({ username: registerState.username, password: registerState.password }),
+            const response = await axios.post("/register", JSON.stringify({ username: registerState.username, password: registerState.password, email: registerState["email-address"]}),
                 {
                     headers: { 'Content-Type': 'application/json'},
                     withCredentials: true

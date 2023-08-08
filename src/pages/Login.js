@@ -8,7 +8,6 @@ const LoginPage = () => {
     // if user is logged in, redirect to home page, otherwise navigate to login page
     const navigate = useNavigate();
     const { auth } = useAuth();
-    console.log(auth.accessToken)
     useEffect(() => {
         if (auth?.accessToken){
             navigate('/home', { replace: true });
