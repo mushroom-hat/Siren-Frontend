@@ -1,7 +1,12 @@
-WIP using React & Tailwind
+### React
+The frontend of Siren is built using React and TailwindCSS. `index.js` is the entry point to the application which starts the application on port 3000.
+
+### Landing Page
+The landing page should look like the image below.
 ![landing](https://github.com/mushroom-hat/Siren-Frontend/blob/main/public/landing.png)
 
 
 Deployment:
 1) node run build
-2) Upload build files to S3 bucket configured for website hosting
+2) Apply the Terraform Infrastructure [here](https://github.com/mushroom-hat/Siren-Terraform)
+3) Upload build directory to provisioned S3 bucket configured for static website hosting
