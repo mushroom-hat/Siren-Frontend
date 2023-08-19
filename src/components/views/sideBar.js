@@ -25,7 +25,7 @@ const SideNav = () => {
         return (
             <Link
               to={linkpage}
-              className={`mb-1 ml-2 pl-2 py-2 flex items-center space-x-3 hover:text-white hover:bg-[#546A7B] rounded ${
+              className={`mb-1 pl-4 py-2 flex items-center space-x-3 hover:text-white hover:bg-[#546A7B] rounded ${
                 isActive ? 'bg-[#546A7B] text-white' : 'hover:bg-opacity-50'
               }`}
             >
@@ -36,9 +36,8 @@ const SideNav = () => {
           );
     }
     return (
-            <div className="min-h-full w-48 flex-none bg-primary shadow-lg">
-                    <section className="ml-4 pt-28 text-xs font-bold text-gray-400">
-                   
+            <div className="min-h-full w-56 flex-none bg-primary shadow-lg">
+                    <section className="mx-2 pt-28 text-xs font-bold text-gray-400">
                     <SideBarIcon text="Home" icon={faHome} linkpage="/home" />
                     <SideBarIcon text="Files" icon={faFolderClosed} linkpage="/files" />
                     <SideBarIcon text="Admin" icon={faShieldHalved} linkpage="/admin" />

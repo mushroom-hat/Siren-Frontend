@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import useDecodeJWT from "../../hooks/useDecodeJWT";
 import React from "react";
+import SearchBar from "../search/SearchBar";
 
 // Helper function to capitalize the first letter of a string
 const capitalizeFirstLetter = (str) => {
@@ -18,8 +19,9 @@ const TopNav = () => {
 
   return (
     <>
-      <div className="pl-16 py-3 text-xs text-sm">
-        {username}
+      <div className="pl-16 pb-4 pt-5 text-xs flex justify-between">
+        <div>
+          {username}
         {paths.map((path, index) => {
           const subPaths = paths.slice(0, index + 1);
           const linkPath = subPaths.join('/');
@@ -39,7 +41,11 @@ const TopNav = () => {
             </React.Fragment>
           );
         })}
+        </div>
+        {/* <!-- Search Bar --> */}
+        <SearchBar/>
       </div>
+
     </>
   );
 };

@@ -11,7 +11,7 @@ import PersistLogin from './components/PersistLogin';
 
 const ROLES = {
   'Admin' : 1,
-  'Alumni' : 2,
+  'TestUser' : 2,
   'User': 3
 }
 
@@ -34,7 +34,7 @@ function App() {
         <Route path="/unauthorized" element={<Unauthorized/>} />
     
       {/* private routes */}
-        <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Admin]}/>}>
+        <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Admin, ROLES.TestUser]}/>}>
           <Route path="/home" element={<HomePage/>} />
           <Route path="/files" element={<HomePage/>} />
         </Route>
