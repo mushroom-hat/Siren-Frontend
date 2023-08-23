@@ -10,25 +10,28 @@ const SearchBar = () => {
 
     
     const handleSearch = async (e) =>{
-        e.preventDefault(); // default behavior reloads the page
-        try {
-            //Handle Login API Integration here
-            const response = await axiosPrivate.post("/search", JSON.stringify({ search: searchQuery }),
-                {
-                    headers: { 'Content-Type': 'application/json'},
-                    withCredentials: true
-                }
+        if (!searchQuery) {
+            console.log("Search query is empty");
+            return;
+          }
+        
+          try {
+            const response = await axiosPrivate.post(
+              "/search",
+              JSON.stringify({ search: searchQuery }),
+              {
+                headers: { 'Content-Type': 'application/json' },
+                withCredentials: true,
+              }
             );
-            
+        
             if (response.status === 200) {
-                const message = response?.data?.message;
-                console.log(message)
+              const message = response?.data?.message;
+              console.log(message);
             }
-
-        }
-        catch (error){
+          } catch (error) {
             console.error(error);
-        }
+          }
         
     }
 

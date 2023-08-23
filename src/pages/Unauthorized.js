@@ -5,7 +5,6 @@ const Unauthorized = () => {
     // go back 1 page in history
     const goBack = () => navigate(-1);
     const { auth } = useAuth();
-    console.log(auth.accessToken)
 
     return (
         <section>
